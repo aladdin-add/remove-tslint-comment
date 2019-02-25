@@ -1,0 +1,70 @@
+{
+  "name": "remove-tslint-comment",
+  "version": "0.0.0",
+  "author": "唯然 <weiran.zsd@outlook.com>",
+  "description": "remove-tslint-comment",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint lib tests",
+    "test": "mocha tests/{lib,bin}/*",
+    "test:cli": "node bin/remove-tslint-comment.js ./tests/fixtures/input.js",
+    "pretest": "npm run lint && npm run clean && npm run test:cli",
+    "clean": "rm -rf ./tests/fixtures/input-out.js"
+  },
+  "bin": {
+    "remove-tslint-comment": "./bin/remove-tslint-comment.js"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "bin"
+  ],
+  "dependencies": {
+    "globby": "^9.0.0",
+    "node-glob": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-ts": "^2.0.1",
+    "husky": "^1.3.1",
+    "mocha": "^6.0.2"
+  },
+  "keywords": [
+    "tslint",
+    "comment directive",
+    "eslint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aladdin-add/remove-tslint-comment.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "ts/node"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "tests/"
+        ],
+        "env": {
+          "mocha": true
+        }
+      }
+    ]
+  },
+  "eslintIgnore": ["fixtures"],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint -- --fix && git add ."
+    }
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  }
+}
