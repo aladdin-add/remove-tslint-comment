@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint lib tests",
     "test": "mocha tests/{lib,bin}/*",
-    "test:cli": "node bin/remove-tslint-comment.js ./tests/fixtures/input.js",
+    "test:cli": "bin/remove-tslint-comment.js ./tests/fixtures/input.js",
     "pretest": "npm run lint && npm run clean && npm run test:cli",
     "clean": "rm -rf ./tests/fixtures/input-out.js"
   },
