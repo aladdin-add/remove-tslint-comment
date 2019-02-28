@@ -21,8 +21,7 @@
     "bin"
   ],
   "dependencies": {
-    "globby": "^9.0.0",
-    "node-glob": "^1.2.0"
+    "globby": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
