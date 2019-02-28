@@ -1,6 +1,6 @@
 {
   "name": "remove-tslint-comment",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "唯然 <weiran.zsd@outlook.com>",
   "description": "remove-tslint-comment",
   "main": "./lib/index.js",
