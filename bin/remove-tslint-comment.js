@@ -11,8 +11,8 @@ const argv = process.argv.slice(2);
 let write = false; // whether to write the raw file or not.
 let pattern = argv;
 
-argv[0] === '--write' && (write = true, pattern = argv.slice(1));
-argv[argv.length - 1] === '--write' && (write = true, pattern = argv.slice(0, -1));
+(argv[0] === '--write') && (write = true, pattern = argv.slice(1));
+(argv[argv.length - 1] === '--write') && (write = true, pattern = argv.slice(0, -1));
 
 const opts = {
   dot: true,
